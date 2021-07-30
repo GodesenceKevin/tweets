@@ -14,6 +14,26 @@
 <p *ngIf="compteur > 10">compteur superieur à 10</p>
 <p>le user est {{tweeter.userName}}</p>
 <p>localisé @ {{tweeter.userLocation}}</p>
+<p>--</p>
+<p>--</p>
+<p>--</p>
+<p>--</p>
+<p>--</p>
+<button (click)="tenTweets()"> 10 tweets </button>
+
+
+<div *ngFor="let user of this.tweeters">
+  <p>------------{{user.idUser}}-------------</p>
+  <p>------------------------------</p>
+  <!--<p>{{tweeter.idUser}}</p>-->
+  <p>{{user.userName}}</p>
+  <p>{{user.userLocation}}</p>
+  <p>--</p>
+  <p>--</p>
+  <p>--</p>
+  <p>--</p>
+  <p>--</p>
+</div>
 
 <!-- <div *ngFor ="let userTweet of tweets"> element : {{userTweet.userName}}</div> -->
 

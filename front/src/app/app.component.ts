@@ -13,6 +13,7 @@ export class AppComponent {
   compteur = 0;
   private testService: TestApiRequestService;
    tweeter: Tweet = {idUser:0, userName: "", userLocation:""};
+   tweeters: Tweet []= [];
   //userTweet: Tweet ;
 
   constructor(testApiRequestService:TestApiRequestService) {
@@ -32,6 +33,16 @@ export class AppComponent {
 
   decrement(){
     return --this.compteur;
+  }
+
+
+  tenTweets() {
+    this.compteur++;
+    this.testService.getTenTweets().subscribe(data => {
+     this.tweeters = data;
+     console.log(data);
+     
+   });
   }
 
 
