@@ -12,8 +12,9 @@ export class AppComponent {
   title = 'EPSI - POEC -- ATELIER JAVA';
   compteur = 0;
   private testService: TestApiRequestService;
-   tweeter: Tweet = {idUser:0, userName: "", userLocation:""};
-   tweeters: Tweet []= [];
+   tweeter: Tweet = {idUser:0, userName: "", userLocation:"", userDescription:"", userCreated:"", userFollowers:0, userFriends:0, userFavourites:"", userVerified:"", text:"", hashtags:"", source:"", isRetweet:""};
+//,
+  tweeters: Tweet []= [];
   //userTweet: Tweet ;
 
   constructor(testApiRequestService:TestApiRequestService) {
@@ -25,7 +26,7 @@ export class AppComponent {
      this.testService.getTweets().subscribe(data => {
       this.tweeter = data;
       console.log(this.tweeter);
-      
+
     });
     return this.compteur;
   }
@@ -41,7 +42,7 @@ export class AppComponent {
     this.testService.getTenTweets().subscribe(data => {
      this.tweeters = data;
      console.log(data);
-     
+
    });
   }
 

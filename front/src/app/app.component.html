@@ -8,34 +8,45 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <h1>Bonjour {{title}}</h1>
-<p>le compteur: {{compteur}}</p>
-<button (click)="increment()">+</button>
-<button (click)="decrement()">-</button>
-<p *ngIf="compteur > 10">compteur superieur à 10</p>
-<p>le user est {{tweeter.userName}}</p>
-<p>localisé @ {{tweeter.userLocation}}</p>
-<p>--</p>
-<p>--</p>
-<p>--</p>
-<p>--</p>
-<p>--</p>
-<button (click)="tenTweets()"> 10 tweets </button>
+<button (click)="tenTweets()"> Tweets </button>
 
+<table>
 
-<div *ngFor="let user of this.tweeters">
-  <p>------------{{user.idUser}}-------------</p>
-  <p>------------------------------</p>
-  <!--<p>{{tweeter.idUser}}</p>-->
-  <p>{{user.userName}}</p>
-  <p>{{user.userLocation}}</p>
-  <p>--</p>
-  <p>--</p>
-  <p>--</p>
-  <p>--</p>
-  <p>--</p>
-</div>
+  <tr>
+    <th>idUser</th>
+    <th>userName</th>
+    <th>userLocation</th>
+    <th>userDescription</th>
+    <th>userCreated</th>
+    <th>userFollowers</th>
+    <th>userFriends</th>
+    <th>userFavourites</th>
+    <th>userVerified</th>
+       <th>text</th>
+     <th>hashtags</th>
+     <th>source</th>
+     <th>isRetweet</th>
+    </tr>
+  <ng-container *ngFor="let user of this.tweeters">
 
-<!-- <div *ngFor ="let userTweet of tweets"> element : {{userTweet.userName}}</div> -->
+      <tr>
+        <td>{{user.idUser}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.userLocation}}</td>
+        <td>{{user.userDescription}}</td>
+        <td>{{user.userCreated}}</td>
+        <td>{{user.userFollowers}}</td>
+         <td>{{user.userFriends}}</td>
+         <td>{{user.userFavourites}}</td>
+        <td>{{user.userVerified}}</td>
+           <td>{{user.text}}</td>
+          <td>{{user.hashtags}}</td>
+          <td>{{user.source}}</td>
+          <td>{{user.isRetweet}}</td>
+      </tr>
+    </ng-container></table>
+
+  <!-- <div *ngFor ="let userTweet of tweets"> element : {{userTweet.userName}}</div> -->
 
 
 
